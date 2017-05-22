@@ -1,0 +1,418 @@
+<robot name="robotis_op3">
+
+  <!-- body link -->
+  <link name="body_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/base.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/base.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.01638	0.00007 0.04972" />
+      <mass value="0.72235"/>
+      <inertia ixx="0.00142735" ixy="-0.00000474" ixz="0.00004289"
+               iyy="0.00103312" iyz="-0.00000098"
+               izz="0.00150436" />
+    </inertial>
+  </link>
+
+  <!-- left hip yaw joint -->
+  <joint name="l_hip_yaw" type="continuous">
+    <parent link="body_link"/>
+    <child link="l_hip_yaw_link"/>
+    <origin xyz="0.0 0.035 0.0" rpy="0 0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- left hip yaw link -->
+  <link name="l_hip_yaw_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll1.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll1.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.00157 0.00000 -0.00774" />
+      <mass value="0.01181"/>
+      <inertia ixx="0.00000151" ixy="0.0" ixz="0.00000001"
+               iyy="0.00000430" iyz="0.0"
+               izz="0.00000412" />
+    </inertial>
+  </link>
+
+  <!-- left hip roll joint -->
+  <joint name="l_hip_roll" type="continuous">
+    <parent link="l_hip_yaw_link"/>
+    <child link="l_hip_roll_link"/>
+    <origin xyz="-0.024 0.0 -0.0285" rpy="0 0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- left hip roll link -->
+  <link name="l_hip_roll_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll2.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll2.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.00388 0.00028 -0.01214" />
+      <mass value="0.17886"/>
+      <inertia ixx="0.00004661" ixy="-0.00000101" ixz="-0.00000131"
+               iyy="0.00012523" iyz="-0.00000006"
+               izz="0.00010857" />
+    </inertial>
+  </link>
+
+  <!-- left hip pitch joint -->
+  <joint name="l_hip_pitch" type="continuous">
+    <parent link="l_hip_roll_link"/>
+    <child link="l_hip_pitch_link"/>
+    <origin xyz="0.0241 0.019 0.0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- left hip pitch link -->
+  <link name="l_hip_pitch_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll3.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll3.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.00059 -0.01901 -0.08408" />
+      <mass value="0.11543"/>
+      <inertia ixx="0.00010499" ixy="-0.00000001" ixz="-0.00000071"
+               iyy="0.00009613" iyz="0.00000353"
+               izz="0.00002493" />
+      </inertial>
+  </link>
+
+  <!-- left knee joint -->
+  <joint name="l_knee" type="continuous">
+    <parent link="l_hip_pitch_link"/>
+    <child link="l_knee_link"/>
+    <origin xyz="0.0 0.0 -0.11015" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- left knee link -->
+  <link name="l_knee_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll4.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll4.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.00000 -0.02151 -0.05500" />
+      <mass value="0.04015"/>
+      <inertia ixx="0.00003715" ixy="0.0" ixz="0.0"
+               iyy="0.00002751" iyz="0.0"
+               izz="0.00001511" />
+    </inertial>
+  </link>
+
+  <!-- left ankle pitch link -->
+  <joint name="l_ank_pitch" type="continuous">
+    <parent link="l_knee_link"/>
+    <child link="l_ank_pitch_link"/>
+    <origin xyz="0 0 -0.110" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- left ankle pitch link -->
+  <link name="l_ank_pitch_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll5.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll5.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.02022 -0.01872 0.01214" />
+      <mass value="0.17886"/>
+      <inertia ixx="0.00004661" ixy="-0.00000101" ixz="0.00000131"
+               iyy="0.00012523" iyz="0.00000006"
+               izz="0.00010857" />
+    </inertial>
+  </link>
+
+  <!-- left ankle roll link -->
+  <joint name="l_ank_roll" type="continuous">
+    <parent link="l_ank_pitch_link"/>
+    <child link="l_ank_roll_link"/>
+    <origin xyz="-0.0241 -0.019 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- left ankle roll link -->
+  <link name="l_ank_roll_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll6.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/ll6.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.02373 0.01037 -0.02760" />
+      <mass value="0.06934"/>
+      <inertia ixx="0.00004034" ixy="-0.00000019" ixz="0.00000012"
+               iyy="0.00007874" iyz="0.00000101"
+               izz="0.00011579" />
+    </inertial>
+  </link>
+
+  <!-- right hip yaw joint -->
+  <joint name="r_hip_yaw" type="continuous">
+    <parent link="body_link"/>
+    <child link="r_hip_yaw_link"/>
+    <origin xyz="0.0 -0.035 0.0" rpy="0 0 0" />
+    <axis xyz="0 0 -1" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- right hip yaw link -->
+  <link name="r_hip_yaw_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl1.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl1.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.00157 0.00000 -0.00774" />
+      <mass value="0.01181"/>
+      <inertia ixx="0.00000151" ixy="0.0" ixz="0.00000001"
+               iyy="0.00000430" iyz="0.0"
+               izz="0.00000412" />
+    </inertial>
+  </link>
+
+  <!-- right hip roll joint -->
+  <joint name="r_hip_roll" type="continuous">
+    <parent link="r_hip_yaw_link"/>
+    <child link="r_hip_roll_link"/>
+    <origin xyz="-0.024 0.0 -0.0285" rpy="0 0 0" />
+    <axis xyz="-1 0 0" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- right hip roll link -->
+  <link name="r_hip_roll_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl2.stl"  scale="0.001 0.001 0.001"/>
+     </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl2.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.00388 -0.00028 -0.01214" />
+      <mass value="0.17886"/>
+      <inertia ixx="0.00004661" ixy="0.00000101" ixz="-0.00000131"
+               iyy="0.00012523" iyz="0.00000006"
+               izz="0.00010857" />
+    </inertial>
+  </link>
+
+  <!-- right hip pitch joint -->
+  <joint name="r_hip_pitch" type="continuous">
+    <parent link="r_hip_roll_link"/>
+    <child link="r_hip_pitch_link"/>
+    <origin xyz="0.0241 -0.019 0.0" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- right hip pitch link -->
+  <link name="r_hip_pitch_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl3.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl3.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.00059 0.01901 -0.08408" />
+      <mass value="0.11543"/>
+      <inertia ixx="0.00010499" ixy="0.00000001" ixz="-0.00000071"
+               iyy="0.00009613" iyz="-0.00000353"
+               izz="0.00002493" />
+    </inertial>
+  </link>
+
+  <!-- right knee joint -->
+  <joint name="r_knee" type="continuous">
+    <parent link="r_hip_pitch_link"/>
+    <child link="r_knee_link"/>
+    <origin xyz="0.0 0.0 -0.11015" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- right knee link -->
+  <link name="r_knee_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl4.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl4.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.00000 0.02151 -0.05500" />
+      <mass value="0.04015"/>
+      <inertia ixx="0.00003715" ixy="0.0" ixz="0.0"
+               iyy="0.00002751" iyz="0.0"
+               izz="0.00001511" />
+    </inertial>
+  </link>
+
+  <!-- right ankle pitch joint -->
+  <joint name="r_ank_pitch" type="continuous">
+    <parent link="r_knee_link"/>
+    <child link="r_ank_pitch_link"/>
+    <origin xyz="0 0 -0.110" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- right ankle pitch link -->
+  <link name="r_ank_pitch_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl5.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl5.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="-0.02022 0.01872 0.01214" />
+      <mass value="0.17886"/>
+      <inertia ixx="0.00004661" ixy="0.00000101" ixz="0.00000131"
+               iyy="0.00012523" iyz="-0.00000006"
+               izz="0.00010857" />
+    </inertial>
+  </link>
+
+  <!-- right ankle roll link -->
+  <joint name="r_ank_roll" type="continuous">
+    <parent link="r_ank_pitch_link"/>
+    <child link="r_ank_roll_link"/>
+    <origin xyz="-0.0241 0.019 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="1000" velocity="100" />
+    <dynamics damping="0.1" friction="0.0" />
+  </joint>
+
+  <!-- right hip roll link -->
+  <link name="r_ank_roll_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl6.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://robotis_description/stl/rl6.stl"  scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.02373 -0.01037 -0.02760" />
+      <mass value="0.06934"/>
+      <inertia ixx="0.00004034" ixy="0.00000019" ixz="0.00000012"
+               iyy="0.00007874" iyz="-0.00000101"
+               izz="0.00011579" />
+    </inertial>
+  </link>
+
+</robot>
