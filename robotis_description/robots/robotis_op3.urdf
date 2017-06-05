@@ -1,5 +1,14 @@
 <robot name="robotis_op3">
+<!--
+  <link name="world">
+  </link>
 
+  <joint name="world_fixed" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="body_link"/>
+  </joint>
+-->
   <!-- body link -->
   <link name="body_link">
     <visual>
@@ -29,8 +38,8 @@
     <child link="l_hip_yaw_link"/>
     <origin xyz="0.0 0.035 0.0" rpy="0 0 0" />
     <axis xyz="0 0 -1" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- left hip yaw link -->
@@ -62,8 +71,8 @@
     <child link="l_hip_roll_link"/>
     <origin xyz="-0.024 0.0 -0.0285" rpy="0 0 0" />
     <axis xyz="-1 0 0" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- left hip roll link -->
@@ -95,8 +104,8 @@
     <child link="l_hip_pitch_link"/>
     <origin xyz="0.0241 0.019 0.0" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- left hip pitch link -->
@@ -128,8 +137,8 @@
     <child link="l_knee_link"/>
     <origin xyz="0.0 0.0 -0.11015" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- left knee link -->
@@ -161,8 +170,8 @@
     <child link="l_ank_pitch_link"/>
     <origin xyz="0 0 -0.110" rpy="0 0 0" />
     <axis xyz="0 -1 0" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- left ankle pitch link -->
@@ -194,8 +203,8 @@
     <child link="l_ank_roll_link"/>
     <origin xyz="-0.0241 -0.019 0" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- left ankle roll link -->
@@ -227,8 +236,8 @@
     <child link="r_hip_yaw_link"/>
     <origin xyz="0.0 -0.035 0.0" rpy="0 0 0" />
     <axis xyz="0 0 -1" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- right hip yaw link -->
@@ -260,8 +269,8 @@
     <child link="r_hip_roll_link"/>
     <origin xyz="-0.024 0.0 -0.0285" rpy="0 0 0" />
     <axis xyz="-1 0 0" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- right hip roll link -->
@@ -293,8 +302,8 @@
     <child link="r_hip_pitch_link"/>
     <origin xyz="0.0241 -0.019 0.0" rpy="0 0 0" />
     <axis xyz="0 -1 0" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- right hip pitch link -->
@@ -317,7 +326,7 @@
       <inertia ixx="0.00010499" ixy="0.00000001" ixz="-0.00000071"
                iyy="0.00009613" iyz="-0.00000353"
                izz="0.00002493" />
-    </inertial>
+      </inertial>
   </link>
 
   <!-- right knee joint -->
@@ -326,8 +335,8 @@
     <child link="r_knee_link"/>
     <origin xyz="0.0 0.0 -0.11015" rpy="0 0 0" />
     <axis xyz="0 -1 0" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- right knee link -->
@@ -359,8 +368,8 @@
     <child link="r_ank_pitch_link"/>
     <origin xyz="0 0 -0.110" rpy="0 0 0" />
     <axis xyz="0 1 0" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- right ankle pitch link -->
@@ -390,8 +399,8 @@
     <child link="r_ank_roll_link"/>
     <origin xyz="-0.0241 0.019 0" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <limit effort="1000" velocity="100" upper="2.199" lower="-2.199" />
-    <dynamics damping="0.01" friction="0.0" />
+    <limit effort="10" velocity="5" upper="2.199" lower="-2.199" />
+    <dynamics damping="0.0" friction="0.0" />
   </joint>
 
   <!-- right hip roll link -->
